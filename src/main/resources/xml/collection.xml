@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="collection" class="com.spring.pojo.Collection" >
+	<!-- 注入列表 -->
+		<property name="lists">
+			<list>
+				<value>list-value1</value>
+				<value>list-value2</value>
+				<value>list-value3</value>
+			</list>
+		</property>
+		<!-- Set集合 -->
+		<property name="sets">
+			<set>
+				<value>set-value1</value>
+				<value>set-value2</value>
+				<value>set-value3</value>
+			</set>
+		</property>
+		<!-- Map集合 -->
+		<property name="map">
+			<map>
+				<entry key="key1" value="map-key1"></entry>
+				<entry key="key2" value="map-key2"></entry>
+				<entry key="key3" value="map-key3"></entry>
+			</map>
+		</property>
+		<!-- properties属性文件 -->
+		<property name="properties">
+			<props>
+				<prop key="pro1">pro-value1</prop>
+				<prop key="pro2">pro-value2</prop>
+				<prop key="pro3">pro-value3</prop>
+			</props>
+		</property>
+		<!-- 注入数组 -->
+		<property name="array">
+			<array>
+				<value>array1</value>
+				<value>array2</value>
+				<value>array3</value>
+			</array>
+		</property>
+	</bean>
+</beans>

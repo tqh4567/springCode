@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="collectionpojo" class="com.spring.pojo.CollectionPojo">
+	<!-- 装配list -->
+		<property name="list">
+			<list>
+				<ref bean="role1"/>
+				<ref bean="role2"/>
+			</list>
+		</property>
+		
+	<!--装配map -->
+		<property name="map">
+			<map>
+				<entry key-ref="role1" value-ref="user1"></entry>
+				<entry key-ref="role2" value-ref="user2"></entry>
+			</map>
+		</property>
+		
+	<!--装配set -->
+		<property name="set">
+			<set>
+				<ref bean="role1"/>
+				<ref bean="role2"/>
+			</set>
+		</property>	
+	</bean>
+	<!-- 注入role -->
+	<bean id="role1" class="com.spring.pojo.Role">
+		<property name="role_id" value="1"></property>
+		<property name="role_name" value="经理"></property>
+	</bean>
+	<!-- 注入role -->
+	<bean id="role2" class="com.spring.pojo.Role">
+	<property name="role_id" value="2"></property>
+		<property name="role_name" value="清洁工"></property>
+	</bean>
+	
+	<!-- 注入user -->
+	<bean id="user1" class="com.spring.pojo.User">
+	<property name="user_id" value="1"></property>
+		<property name="user_name" value="小王"></property>
+	</bean>
+	<!-- 注入user -->
+	<bean id="user2" class="com.spring.pojo.User">
+	<property name="user_id" value="2"></property>
+		<property name="user_name" value="小张"></property>
+	</bean>
+</beans>
